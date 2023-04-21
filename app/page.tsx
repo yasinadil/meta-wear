@@ -7,6 +7,7 @@ import banner from "../public/assets/SMW-Logo_Glitch.gif";
 import nobg from "../public/assets/SMW-NoBG.gif";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
+
 const Home = () => {
   return (
     <>
