@@ -7,6 +7,7 @@ import banner from "../public/assets/SMW-Logo_Glitch.gif";
 import nobg from "../public/assets/SMW-NoBG.gif";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
+import Mint from "@/components/Mint/Mint";
 
 const Home = () => {
   return (
@@ -166,7 +167,7 @@ const Home = () => {
               <div className="w-4 h-4 bg-[#fdf92d] absolute top-[28%] left-[30%] transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
               <div className="w-36 h-0.5 bg-[#e7d17a] absolute top-[29%] left-[30%] z-20"></div>
 
-              <div className="absolute top-[29%] left-[23%] text-white">
+              <div className="absolute top-[30%] left-[23%] text-white">
                 <h1
                   className="text-base text-center my-2"
                   style={{ fontFamily: "oswald-extralight" }}
@@ -183,7 +184,7 @@ const Home = () => {
               <div className="w-4 h-4 bg-[#fdf92d] absolute top-[28%] right-[29%] transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
               <div className="w-36 h-0.5 bg-[#e7d17a] absolute top-[29%] right-[30%] z-0"></div>
 
-              <div className="absolute top-[29%] right-[23%] text-white">
+              <div className="absolute top-[30%] right-[23%] text-white">
                 <h1
                   className="text-base text-center my-2"
                   style={{ fontFamily: "oswald-extralight" }}
@@ -201,7 +202,7 @@ const Home = () => {
               <div className="w-4 h-4 bg-[#fdf92d] absolute bottom-[44%] left-[30%] transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
               <div className="w-36 h-0.5 bg-[#e7d17a] absolute bottom-[45%] left-[30%] z-20"></div>
 
-              <div className="absolute bottom-[31%] left-[23%] text-white">
+              <div className="absolute bottom-[28%] left-[23%] text-white">
                 <h1
                   className="text-base text-center my-2"
                   style={{ fontFamily: "oswald-extralight" }}
@@ -217,7 +218,7 @@ const Home = () => {
               <div className="w-4 h-4 bg-[#fdf92d] absolute bottom-[44%] right-[28%] transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
               <div className="w-36 h-0.5 bg-[#e7d17a] absolute bottom-[45%] right-[29%] z-0"></div>
 
-              <div className="absolute bottom-[26%] right-[22%] text-white">
+              <div className="absolute bottom-[23%] right-[22%] text-white">
                 <h1
                   className="text-base text-center my-2"
                   style={{ fontFamily: "oswald-extralight" }}
@@ -294,6 +295,10 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <div className="divider bg-[#e7d17a] mt-0 h-0.5 mb-2"></div>
+        <div className="divider bg-[#e7d17a] h-2 m-0"></div>
+        {/* MINT SECTION HERE */}
+        <Mint />
         <div className="divider bg-yellow-200 h-2 m-0"></div>
         <div className="divider bg-yellow-200 h-0.5 mt-2 mb-0.5"></div>
         <div className="block md:hidden">
