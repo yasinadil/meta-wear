@@ -1,16 +1,25 @@
 "use client";
 import "@rainbow-me/rainbowkit/styles.css";
-import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
-import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { goerli } from "wagmi/chains";
-import { alchemyProvider } from "wagmi/providers/alchemy";
-import { publicProvider } from "wagmi/providers/public";
+// import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+// import { configureChains, createClient, WagmiConfig } from "wagmi";
+// import { goerli } from "wagmi/chains";
+// import { alchemyProvider } from "wagmi/providers/alchemy";
+// import { publicProvider } from "wagmi/providers/public";
 import Navbar from "@/components/Navbar/Navbar";
 import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from "@tanstack/react-query";
+  ThirdwebProvider,
+  metamaskWallet,
+  coinbaseWallet,
+  walletConnectV1,
+  walletConnect,
+  safeWallet,
+  paperWallet,
+} from "@thirdweb-dev/react";
+// import {
+//   QueryClient,
+//   QueryClientProvider,
+//   useQuery,
+// } from "@tanstack/react-query";
 import "./globals.css";
 
 export const metadata = {
@@ -22,23 +31,23 @@ export const metadata = {
   },
 };
 
-const { chains, provider } = configureChains(
-  [goerli],
-  [
-    alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_API_KEY! }),
-    publicProvider(),
-  ]
-);
-const { connectors } = getDefaultWallets({
-  appName: "Digital Identity | Stealth Meta Wear",
-  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
-  chains,
-});
-const wagmiClient = createClient({
-  autoConnect: true,
-  connectors,
-  provider,
-});
+// const { chains, provider } = configureChains(
+//   [goerli],
+//   [
+//     alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_API_KEY! }),
+//     publicProvider(),
+//   ]
+// );
+// const { connectors } = getDefaultWallets({
+//   appName: "Digital Identity | Stealth Meta Wear",
+//   projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+//   chains,
+// });
+// const wagmiClient = createClient({
+//   autoConnect: true,
+//   connectors,
+//   provider,
+// });
 
 export default function RootLayout({
   children,
@@ -48,13 +57,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-[#121414]">
-        <WagmiConfig client={wagmiClient}>
-          <RainbowKitProvider chains={chains}>
-            <Navbar />
+        {/* <WagmiConfig client={wagmiClient}>
+          <RainbowKitProvider chains={chains}> */}
+        <ThirdwebProvider activeChain={"goerli"}>
+          <Navbar />
 
-            {children}
-          </RainbowKitProvider>
-        </WagmiConfig>
+          {children}
+        </ThirdwebProvider>
+        {/* </RainbowKitProvider>
+        </WagmiConfig> */}
       </body>
     </html>
   );
