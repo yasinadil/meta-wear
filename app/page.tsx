@@ -8,10 +8,15 @@ import nobg from "../public/assets/SMW-NoBG.gif";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
 import Mint from "@/components/Mint/Mint";
+import Head from "next/head";
 
 const Home = () => {
   return (
     <>
+      <Head>
+        <title>Digital Identity | Stealth Meta Wear</title>
+        <link rel="icon" href="../public/favicon.ico" />
+      </Head>
       <Script src="https://kit.fontawesome.com/aa92af4b25.js" />
       <main>
         {/* <div className="bg-[url('../public/assets/SMW-Logo_Glitch.gif')] bg-cover bg-no-repeat w-[100%] h-[100vh]"></div> */}
