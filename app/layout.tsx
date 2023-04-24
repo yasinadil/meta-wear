@@ -59,7 +59,12 @@ export default function RootLayout({
       <body className="bg-[#121414]">
         {/* <WagmiConfig client={wagmiClient}>
           <RainbowKitProvider chains={chains}> */}
-        <ThirdwebProvider activeChain={"goerli"}>
+        <ThirdwebProvider
+          activeChain={"goerli"}
+          sdkOptions={{
+            alchemyApiKey: process.env.NEXT_PUBLIC_API_KEY!, // your Alchemy API key
+          }}
+        >
           <Navbar />
 
           {children}

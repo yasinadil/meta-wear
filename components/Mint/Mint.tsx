@@ -4,26 +4,32 @@ import React from "react";
 import Carousel from "./Carousel";
 import { ToastContainer, toast } from "react-toastify";
 import { ConnectWallet } from "@thirdweb-dev/react";
-import { useContractWrite, useContract, Web3Button } from "@thirdweb-dev/react";
+import { Web3Button } from "@thirdweb-dev/react";
+import { ethers } from "ethers";
 
 import "react-toastify/dist/ReactToastify.css";
 const erc721ABI = require("../ABI/erc721abi.json");
 
-const contractAddress = "0x91ea7B342176B0721f2B865924DC2fBf924F3acb";
+const contractAddress = "0x4CcAaB776FaEE0fD203958C85B89811d08990dBB";
 
 const Mint = () => {
-  // if (error) {
-  // toast.error("🦄 Wow so easy!", {
-  //   position: "top-right",
-  //   autoClose: 5000,
-  //   hideProgressBar: false,
-  //   closeOnClick: true,
-  //   pauseOnHover: true,
-  //   draggable: true,
-  //   progress: undefined,
-  //   theme: "light",
-  // });
-  // }
+  const [minted, setMinted] = React.useState("0");
+
+  React.useEffect(() => {
+    async function fetchData() {
+      const provider = new ethers.providers.JsonRpcProvider(
+        "https://eth-goerli.g.alchemy.com/v2/" +
+          process.env.NEXT_PUBLIC_API_KEY!
+      );
+      let contract = new ethers.Contract(contractAddress, erc721ABI, provider);
+
+      let Minted = await contract.totalSupply();
+      let total = Number(Minted);
+      setMinted(total.toString());
+    }
+    fetchData();
+  });
+
   return (
     <>
       <ToastContainer
@@ -72,6 +78,10 @@ const Mint = () => {
                 <span>Price</span>
                 <span className="float-right">0 ETH</span>
               </div>
+              <div className="px-2">
+                <span>Minted</span>
+                <span className="float-right">{minted}/111</span>
+              </div>
               <div className="card-actions justify-end mt-6">
                 {/* <button className="bg-[#e7d17a] text-black px-5 py-2 hover:bg-red-600">
                   Mint Now!
@@ -83,6 +93,31 @@ const Mint = () => {
                   theme="dark"
                   // Call the name of your smart contract function
                   action={(contract) => contract.call("mint", [1])}
+                  onSuccess={async () => {
+                    toast.success("Successfully minted your HEX Gen 1 Bag!", {
+                      position: "top-right",
+                      autoClose: 5000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                      theme: "light",
+                    });
+                    const provider = new ethers.providers.JsonRpcProvider(
+                      "https://eth-goerli.g.alchemy.com/v2/" +
+                        process.env.NEXT_PUBLIC_API_KEY!
+                    );
+                    let contract = new ethers.Contract(
+                      contractAddress,
+                      erc721ABI,
+                      provider
+                    );
+
+                    let Minted = await contract.totalSupply();
+                    let total = Number(Minted);
+                    setMinted(total.toString());
+                  }}
                   onError={(error: any) =>
                     toast.error(error.reason, {
                       position: "top-right",
