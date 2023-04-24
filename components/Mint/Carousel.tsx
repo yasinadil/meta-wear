@@ -1,12 +1,18 @@
 "use client";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "react-feather";
-import Item1 from "../../public/assets/clothing/arms_01.jpg";
-import Item2 from "../../public/assets/clothing/arms_02.jpg";
-import Item3 from "../../public/assets/clothing/arms_03.jpg";
+import Item1 from "../../public/assets/items/HexBag_1.jpg";
+import Item2 from "../../public/assets/items/HexBag_4.jpg";
+import Item3 from "../../public/assets/items/HexBag_5.jpg";
+import Item4 from "../../public/assets/items/HexBag_10.jpg";
+import Item5 from "../../public/assets/items/HexBag_27.jpg";
+import Item6 from "../../public/assets/items/HexBag_35.jpg";
+import Item7 from "../../public/assets/items/HexBag_57.jpg";
+import Item8 from "../../public/assets/items/HexBag_60.jpg";
+import Item9 from "../../public/assets/items/HexBag_92.jpg";
 import Image from "next/image";
 
-const slides = [Item1, Item2, Item3];
+const slides = [Item1, Item2, Item3, Item4, Item5, Item6, Item7, Item8, Item9];
 
 export default function Carousel({
   autoSlide = false,
