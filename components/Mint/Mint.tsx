@@ -3,7 +3,6 @@ import React from "react";
 // import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Carousel from "./Carousel";
 import { ToastContainer, toast } from "react-toastify";
-import { ConnectWallet } from "@thirdweb-dev/react";
 import { Web3Button } from "@thirdweb-dev/react";
 import { ethers } from "ethers";
 
@@ -61,10 +60,6 @@ const Mint = () => {
           </p>
         </div>
 
-        <div className="flex justify-center items-center">
-          <ConnectWallet />
-        </div>
-
         <div className="flex justify-center my-12">
           <div className="card w-80 glass text-white">
             <figure>
@@ -87,7 +82,7 @@ const Mint = () => {
                   Mint Now!
                 </button> */}
                 <Web3Button
-                  className="bg-[#e7d17a] text-black px-5 py-2 hover:bg-red-600"
+                  className="bg-[#e7d17a] text-black py-2 hover:bg-red-600"
                   contractAddress={contractAddress}
                   contractAbi={erc721ABI}
                   theme="dark"

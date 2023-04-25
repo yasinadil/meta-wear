@@ -119,3 +119,9 @@ p {
 html {
   scroll-behavior: smooth;
 }
+
+.css-tq0uin {
+  background-color: transparent !important;
+  color: white !important;
+  cursor: pointer !important;
+}

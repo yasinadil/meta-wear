@@ -138,7 +138,7 @@ const Home = () => {
                   </div>
 
                   <Image
-                    className="w-[450px] h-[350px] md:h-[450px] z-10"
+                    className="w-[354px] h-[400px] md:h-[400px] z-10"
                     src={hexgen}
                     alt="hexgen"
                   />
@@ -155,7 +155,7 @@ const Home = () => {
                 </p>
               </div>
               <div className="flex justify-center mt-10">
-                <button className="bg-[#e7d17a] px-5 py-2 hover:bg-red-600 notherFont">
+                <button className="bg-[#e7d17a] text-black px-5 py-2 hover:bg-red-600 notherFont">
                   Explore Collection
                 </button>
               </div>
@@ -341,12 +341,12 @@ const Home = () => {
                   <h2 className="text-gray-600">NFT Collection AVA Gen1</h2>
                 </div>
                 <div className="flex justify-center mt-10">
-                  <button className="bg-[#e7d17a] px-5 py-2 hover:bg-red-600">
+                  <button className="bg-[#e7d17a] text-black px-5 py-2 hover:bg-red-600">
                     Learn More
                   </button>
                 </div>
               </div>
-              <div className="absolute bottom-10">
+              <div className="absolute bottom-1">
                 <div className="divider bg-[#e7d17a] h-2 m-0"></div>
                 <div className="divider bg-[#e7d17a] h-0.5 mt-2 mb-0.5"></div>
                 <Slider />
@@ -361,7 +361,9 @@ const Home = () => {
           <h2 className="text-center text-white">Stealth Meta Wear 2023</h2>
           <div className="flex justify-center py-4">
             <Link href="mailto:info@stealthmetawear.com">
-              <button className="bg-[#e7d17a] px-5 py-2">Contact Us</button>
+              <button className="bg-[#e7d17a] text-black px-5 py-2">
+                Contact Us
+              </button>
             </Link>
           </div>
           <div className="flex justify-center gap-x-4 mt-4">

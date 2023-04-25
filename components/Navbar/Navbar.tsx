@@ -3,8 +3,11 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../public/assets/SMW_Logo.png";
+import { ConnectWallet } from "@thirdweb-dev/react";
 import "./Navbar.module.css";
 
+const contractAddress = "0x4CcAaB776FaEE0fD203958C85B89811d08990dBB";
+const erc721ABI = require("../ABI/erc721abi.json");
 const Navbar = () => {
   const [clicked, isClicked] = React.useState(false);
   return (
@@ -124,7 +127,13 @@ const Navbar = () => {
                 <Image width={50} height={50} src={logo} alt="logo" />
               </Link>
               <Link href={"/nft-collections"}>NFT COLLECTIONS</Link>
-              <a href={"/#utility"}>UTILITIES</a>
+              <div className="flex justify-center items-center">
+                <ConnectWallet
+                  btnTitle="CONNECT WALLET"
+                  theme="dark"
+                  className="bg-transparent"
+                />
+              </div>
             </div>
           </div>
         </div>
