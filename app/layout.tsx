@@ -52,7 +52,7 @@ export default function RootLayout({
           <RainbowKitProvider chains={chains}> */}
         <ThirdwebProvider
           autoConnect={false}
-          activeChain={"ethereum"}
+          activeChain="ethereum"
           sdkOptions={{
             alchemyApiKey: process.env.NEXT_PUBLIC_API_KEY!, // your Alchemy API key
           }}

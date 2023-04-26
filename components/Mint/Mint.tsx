@@ -76,7 +76,7 @@ const Mint = () => {
                 <span>Minted</span>
                 <span className="float-right">{minted}/111</span>
               </div>
-              <div className="card-actions justify-end mt-6">
+              <div className="card-actions justify-center mt-6">
                 {/* <button className="bg-[#e7d17a] text-black px-5 py-2 hover:bg-red-600">
                   Mint Now!
                 </button> */}

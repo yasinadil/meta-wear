@@ -4,10 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../public/assets/SMW_Logo.png";
 import { ConnectWallet } from "@thirdweb-dev/react";
+
 import "./Navbar.module.css";
 
 const Navbar = () => {
   const [clicked, isClicked] = React.useState(false);
+
   return (
     <>
       <div className="block md:hidden relative">
@@ -114,14 +116,11 @@ const Navbar = () => {
       </div>
       <div className="text-white font-light">
         <div className="hidden md:block">
-          <Link href={"/"}>
-            <Image
-              className="absolute top-5 left-[50%] translate-x-[-50%]"
-              width={50}
-              height={50}
-              src={logo}
-              alt="logo"
-            />
+          <Link
+            className="absolute top-5 left-[50%] translate-x-[-50%] z-50"
+            href={"/"}
+          >
+            <Image className="" width={50} height={50} src={logo} alt="logo" />
           </Link>
           <div className="flex flex-row justify-center">
             <div className="flex justify-around items-start gap-x-14 text-lg absolute top-5 left-[50%] translate-x-[-50%] ">
@@ -136,12 +135,12 @@ const Navbar = () => {
                   </a>
                 </div>
                 <div className="flex items-center h-14 w-52 justify-end">
-                  <Link className="text-right pr-10" href={"/development"}>
+                  <Link className="text-right mr-10" href={"/development"}>
                     DEVELOPMENT
                   </Link>
                 </div>
                 <div className="flex items-center h-14 w-52 justify-end">
-                  <Link className="text-center pl-10" href={"/nft-collections"}>
+                  <Link className="text-center ml-10" href={"/nft-collections"}>
                     NFT COLLECTIONS
                   </Link>
                 </div>
