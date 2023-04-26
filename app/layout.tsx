@@ -45,7 +45,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Digital Identity | Stealth Meta Wear</title>
-        <link rel="icon" href="../public/favicon.ico" />
+        {/* <link rel="icon" href="../public/favicon.ico" /> */}
       </head>
       <body className="bg-[#121414]">
         {/* <WagmiConfig client={wagmiClient}>
