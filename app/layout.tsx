@@ -7,7 +7,6 @@ import "@rainbow-me/rainbowkit/styles.css";
 // import { publicProvider } from "wagmi/providers/public";
 import Navbar from "@/components/Navbar/Navbar";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
-import Head from "next/head";
 import "./globals.css";
 
 // export const metadata = {
@@ -44,10 +43,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <title>Digital Identity | Stealth Meta Wear</title>
         <link rel="icon" href="../public/favicon.ico" />
-      </Head>
+      </head>
       <body className="bg-[#121414]">
         {/* <WagmiConfig client={wagmiClient}>
           <RainbowKitProvider chains={chains}> */}
