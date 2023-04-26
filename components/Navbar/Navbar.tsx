@@ -6,8 +6,6 @@ import logo from "../../public/assets/SMW_Logo.png";
 import { ConnectWallet } from "@thirdweb-dev/react";
 import "./Navbar.module.css";
 
-const contractAddress = "0x4CcAaB776FaEE0fD203958C85B89811d08990dBB";
-const erc721ABI = require("../ABI/erc721abi.json");
 const Navbar = () => {
   const [clicked, isClicked] = React.useState(false);
   return (
@@ -114,25 +112,45 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="absolute top-5 left-[50%] translate-x-[-46%] text-white font-light">
+      <div className="text-white font-light">
         <div className="hidden md:block">
-          <div className="flex flex-row justify-center">
+          <Link href={"/"}>
+            <Image
+              className="absolute top-5 left-[50%] translate-x-[-50%]"
+              width={50}
+              height={50}
+              src={logo}
+              alt="logo"
+            />
+          </Link>
+          <div className="absolute top-5 left-[50%] translate-x-[-50%] flex flex-row justify-center">
             <div className="flex justify-around items-center gap-x-10 text-lg">
-              <a href={"/#about"} style={{ scrollBehavior: "smooth" }}>
-                ABOUT
-              </a>
-              <Link href={"/development"}>DEVELOPMENT</Link>{" "}
+              <div className="flex flex-row items-center">
+                <a
+                  className="w-48 text-right"
+                  href={"/#about"}
+                  style={{ scrollBehavior: "smooth" }}
+                >
+                  ABOUT
+                </a>
+                <Link className="w-48 text-right pr-2" href={"/development"}>
+                  DEVELOPMENT
+                </Link>{" "}
+              </div>
               <Link href={"/"}>
-                {" "}
                 <Image width={50} height={50} src={logo} alt="logo" />
               </Link>
-              <Link href={"/nft-collections"}>NFT COLLECTIONS</Link>
-              <div className="flex justify-center items-center">
-                <ConnectWallet
-                  btnTitle="CONNECT WALLET"
-                  theme="dark"
-                  className="bg-transparent"
-                />
+              <div className="flex flex-row items-center">
+                <Link className="w-48 text-center" href={"/nft-collections"}>
+                  NFT COLLECTIONS
+                </Link>
+                <div className="flex justify-center items-center">
+                  <ConnectWallet
+                    btnTitle="CONNECT WALLET"
+                    theme="dark"
+                    className="bg-transparent w-48 text-center"
+                  />
+                </div>
               </div>
             </div>
           </div>

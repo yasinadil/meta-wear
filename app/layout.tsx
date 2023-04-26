@@ -6,20 +6,8 @@ import "@rainbow-me/rainbowkit/styles.css";
 // import { alchemyProvider } from "wagmi/providers/alchemy";
 // import { publicProvider } from "wagmi/providers/public";
 import Navbar from "@/components/Navbar/Navbar";
-import {
-  ThirdwebProvider,
-  metamaskWallet,
-  coinbaseWallet,
-  walletConnectV1,
-  walletConnect,
-  safeWallet,
-  paperWallet,
-} from "@thirdweb-dev/react";
-// import {
-//   QueryClient,
-//   QueryClientProvider,
-//   useQuery,
-// } from "@tanstack/react-query";
+import { ThirdwebProvider } from "@thirdweb-dev/react";
+import Head from "next/head";
 import "./globals.css";
 
 // export const metadata = {
@@ -56,11 +44,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <title>Digital Identity | Stealth Meta Wear</title>
+        <link rel="icon" href="../public/favicon.ico" />
+      </Head>
       <body className="bg-[#121414]">
         {/* <WagmiConfig client={wagmiClient}>
           <RainbowKitProvider chains={chains}> */}
         <ThirdwebProvider
-          activeChain={"goerli"}
+          autoConnect={false}
+          activeChain={"ethereum"}
           sdkOptions={{
             alchemyApiKey: process.env.NEXT_PUBLIC_API_KEY!, // your Alchemy API key
           }}

@@ -330,15 +330,25 @@ const Home = () => {
                 </p>
                 <div className="divider h-0.5 bg-yellow-300 mx-8 mb-10"></div>
                 <div className="flex gap-x-4">
-                  <h2 className="text-white">Project Start</h2>
-                  <h2 className="text-yellow-400">NFT Collection HEX Gen1</h2>
-                  <h2 className="text-gray-600">NFT Collection CybeX Gen1</h2>
-                  <h2 className="text-gray-600">TikTok Integration</h2>
-                  <h2 className="text-gray-600">NFT Staking</h2>
-                  <h2 className="text-gray-600">Game UGC Assets</h2>
-                  <h2 className="text-gray-600">SMW Token</h2>
-                  <h2 className="text-gray-600">Application Launch</h2>
-                  <h2 className="text-gray-600">NFT Collection AVA Gen1</h2>
+                  <h2 className="text-center text-white">Project Start</h2>
+                  <h2 className="text-center text-yellow-400">
+                    NFT Collection HEX Gen1
+                  </h2>
+                  <h2 className="text-center text-gray-600">
+                    NFT Collection CybeX Gen1
+                  </h2>
+                  <h2 className="text-center text-gray-600">
+                    TikTok Integration
+                  </h2>
+                  <h2 className="text-center text-gray-600">NFT Staking</h2>
+                  <h2 className="text-center text-gray-600">Game UGC Assets</h2>
+                  <h2 className="text-center text-gray-600">SMW Token</h2>
+                  <h2 className="text-center text-gray-600">
+                    Application Launch
+                  </h2>
+                  <h2 className="text-center text-gray-600">
+                    NFT Collection AVA Gen1
+                  </h2>
                 </div>
                 <div className="flex justify-center mt-10">
                   <button className="bg-[#e7d17a] text-black px-5 py-2 hover:bg-red-600">

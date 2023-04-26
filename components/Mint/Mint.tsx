@@ -9,7 +9,7 @@ import { ethers } from "ethers";
 import "react-toastify/dist/ReactToastify.css";
 const erc721ABI = require("../ABI/erc721abi.json");
 
-const contractAddress = "0x4CcAaB776FaEE0fD203958C85B89811d08990dBB";
+const contractAddress = "0xfB82675cC33C8FcbC2822d958697Cbd808A8F687";
 
 const Mint = () => {
   const [minted, setMinted] = React.useState("0");
@@ -17,8 +17,7 @@ const Mint = () => {
   React.useEffect(() => {
     async function fetchData() {
       const provider = new ethers.providers.JsonRpcProvider(
-        "https://eth-goerli.g.alchemy.com/v2/" +
-          process.env.NEXT_PUBLIC_API_KEY!
+        process.env.NEXT_PUBLIC_ALCHEMY_LINK!
       );
       let contract = new ethers.Contract(contractAddress, erc721ABI, provider);
 
@@ -45,9 +44,9 @@ const Mint = () => {
       />
 
       <div className="mt-12">
-        <h1 className="text-center text-yellow-200">Mint</h1>
+        <h1 className="text-center text-yellow-200">MINT</h1>
         <div className="flex justify-center items-start">
-          <p className="w-5/6 text-center text-white pb-4 tracking-wider leading-5">
+          <p className="w-5/6 text-center text-white mb-4 leading-9 text-xl tracking-wide">
             Discover the captivating &quot;Hex Gen 1 Bags&quot; NFT collection,
             a one-of-a-kind series featuring 111 ingeniously designed digital
             bags, available for free minting. Each Hex Gen 1 Bag is an artistic
@@ -100,8 +99,7 @@ const Mint = () => {
                       theme: "light",
                     });
                     const provider = new ethers.providers.JsonRpcProvider(
-                      "https://eth-goerli.g.alchemy.com/v2/" +
-                        process.env.NEXT_PUBLIC_API_KEY!
+                      process.env.NEXT_PUBLIC_ALCHEMY_LINK!
                     );
                     let contract = new ethers.Contract(
                       contractAddress,
