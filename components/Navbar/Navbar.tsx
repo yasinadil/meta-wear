@@ -123,32 +123,33 @@ const Navbar = () => {
               alt="logo"
             />
           </Link>
-          <div className="absolute top-5 left-[50%] translate-x-[-50%] flex flex-row justify-center">
-            <div className="flex justify-around items-center gap-x-10 text-lg">
+          <div className="flex flex-row justify-center">
+            <div className="flex justify-around items-start gap-x-14 text-lg absolute top-5 left-[50%] translate-x-[-50%] ">
               <div className="flex flex-row items-center">
-                <a
-                  className="w-48 text-right"
-                  href={"/#about"}
-                  style={{ scrollBehavior: "smooth" }}
-                >
-                  ABOUT
-                </a>
-                <Link className="w-48 text-right pr-2" href={"/development"}>
-                  DEVELOPMENT
-                </Link>{" "}
-              </div>
-              <Link href={"/"}>
-                <Image width={50} height={50} src={logo} alt="logo" />
-              </Link>
-              <div className="flex flex-row items-center">
-                <Link className="w-48 text-center" href={"/nft-collections"}>
-                  NFT COLLECTIONS
-                </Link>
-                <div className="flex justify-center items-center">
+                <div className="flex items-center h-14 w-52 justify-end">
+                  <a
+                    className="text-right"
+                    href={"/#about"}
+                    style={{ scrollBehavior: "smooth" }}
+                  >
+                    ABOUT
+                  </a>
+                </div>
+                <div className="flex items-center h-14 w-52 justify-end">
+                  <Link className="text-right pr-10" href={"/development"}>
+                    DEVELOPMENT
+                  </Link>
+                </div>
+                <div className="flex items-center h-14 w-52 justify-end">
+                  <Link className="text-center pl-10" href={"/nft-collections"}>
+                    NFT COLLECTIONS
+                  </Link>
+                </div>
+                <div className="flex justify-center items-center w-52 h-14">
                   <ConnectWallet
                     btnTitle="CONNECT WALLET"
                     theme="dark"
-                    className="bg-transparent w-48 text-center"
+                    className="bg-transparent w-64 text-center"
                   />
                 </div>
               </div>
