@@ -14,8 +14,34 @@ const contractAddress = "0xfB82675cC33C8FcbC2822d958697Cbd808A8F687";
 
 const Mint = () => {
   const [minted, setMinted] = React.useState("0");
+  const [days, setdays] = React.useState(0);
+  const [hours, sethours] = React.useState(0);
+  const [minutes, setminutes] = React.useState(0);
+  const [seconds, setseconds] = React.useState(0);
 
   React.useEffect(() => {
+    const unixTimestamp = Math.floor(Date.now());
+    const dest = 1683212400000;
+    const timestamp = (dest - unixTimestamp) / 1000;
+    const days = Math.floor(timestamp / 86400);
+    const hours = Math.floor((timestamp % 86400) / 3600);
+    const minutes = Math.floor((timestamp % 3600) / 60);
+    const seconds = Math.floor(timestamp % 60);
+    setdays(days);
+    sethours(hours);
+    setminutes(minutes);
+    setseconds(seconds);
+    console.log(
+      days +
+        " days " +
+        hours +
+        " hours " +
+        minutes +
+        " minutes " +
+        seconds +
+        " seconds "
+    );
+
     async function fetchData() {
       const provider = new ethers.providers.JsonRpcProvider(
         process.env.NEXT_PUBLIC_ALCHEMY_LINK!
@@ -27,7 +53,7 @@ const Mint = () => {
       setMinted(total.toString());
     }
     fetchData();
-  });
+  }, []);
 
   return (
     <>
@@ -59,12 +85,21 @@ const Mint = () => {
             &quot;Hex Gen 1 Bags&quot; NFT – start minting your favorites now!
           </p>
         </div>
-        <div className="mt-4">
-          <p className="text-center text-2xl font-semibold mb-4 tracking-wider">
-            Mint will be available in:
-          </p>
-          <LaunchCountdown days={7} hours={12} minutes={5} seconds={0} />
-        </div>
+
+        {days !== 0 && hours !== 0 && minutes !== 0 && seconds !== 0 && (
+          <div className="mt-4">
+            <p className="text-center text-2xl text-white font-semibold mb-4 tracking-wider">
+              Mint will be available in:
+            </p>
+            <LaunchCountdown
+              days={days}
+              hours={hours}
+              minutes={minutes}
+              seconds={seconds}
+            />{" "}
+          </div>
+        )}
+
         <div className="flex justify-center my-12">
           <div className="card w-80 glass text-white">
             <figure>

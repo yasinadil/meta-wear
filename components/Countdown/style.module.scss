@@ -21,7 +21,7 @@ $breakpoints: (
     transform: translate3d(0, 0, 0);
 
     @include media(">tablet") {
-      width: 148px;
+      width: 118px;
     }
 
     .countdownBlock {
@@ -38,9 +38,9 @@ $breakpoints: (
 
       @include media(">tablet") {
         font-weight: bold;
-        font-size: 80px;
+        font-size: 40px;
         letter-spacing: -2.4px;
-        line-height: 146px;
+        line-height: 76px;
         margin-bottom: 10px;
         border-radius: 8px;
       }
