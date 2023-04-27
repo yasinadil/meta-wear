@@ -320,7 +320,7 @@ const Home = () => {
                 src={nobg}
                 alt="nobg"
               />
-              <div className="absolute top-8 left-[30%] translate-x-[-22%] pt-14">
+              <div className="absolute top-10 left-[50%] translate-x-[-50%]">
                 {" "}
                 <h1 className="text-center text-yellow-200">Development</h1>
                 <p className="text-center text-white my-4">
@@ -331,7 +331,7 @@ const Home = () => {
                 <div className="divider h-0.5 bg-yellow-300 mx-8 mb-10"></div>
                 <div className="flex gap-x-4">
                   <h2 className="text-center text-white">Project Start</h2>
-                  <h2 className="text-center text-yellow-400">
+                  <h2 className="text-center text-yellow-400 w-52">
                     NFT Collection HEX Gen1
                   </h2>
                   <h2 className="text-center text-gray-600">
@@ -341,7 +341,10 @@ const Home = () => {
                     TikTok Integration
                   </h2>
                   <h2 className="text-center text-gray-600">NFT Staking</h2>
-                  <h2 className="text-center text-gray-600">Game UGC Assets</h2>
+                  <h2 className="text-center text-gray-600 w-48">
+                    Game UGC Assets
+                  </h2>
+
                   <h2 className="text-center text-gray-600">SMW Token</h2>
                   <h2 className="text-center text-gray-600">
                     Application Launch
