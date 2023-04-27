@@ -167,12 +167,12 @@ const Home = () => {
         <div className="hidden md:block">
           <div className="flex justify-center" id="utility">
             <div className="relative">
-              <Image className="w-screen h-screen" src={setup} alt="setup" />
+              <Image className="" src={setup} alt="setup" />
 
-              <div className="w-4 h-4 bg-[#fdf92d] absolute top-[28%] left-[30%] transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
-              <div className="w-36 h-0.5 bg-[#e7d17a] absolute top-[29%] left-[30%] z-20"></div>
+              <div className="w-4 h-4 bg-[#fdf92d] absolute top-[28%] left-[29%] transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
+              <div className="w-36 h-0.5 bg-[#e7d17a] absolute top-[29%] left-[29%] z-20"></div>
 
-              <div className="absolute top-[30%] left-[23%] text-white">
+              <div className="absolute top-[30%] left-[22%] text-white">
                 <h1
                   className="text-base text-center my-2"
                   style={{ fontFamily: "oswald-extralight" }}
@@ -186,10 +186,10 @@ const Home = () => {
                 </p>
               </div>
 
-              <div className="w-4 h-4 bg-[#fdf92d] absolute top-[28%] right-[29%] transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
-              <div className="w-36 h-0.5 bg-[#e7d17a] absolute top-[29%] right-[30%] z-0"></div>
+              <div className="w-4 h-4 bg-[#fdf92d] absolute top-[28%] right-[28%] transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
+              <div className="w-36 h-0.5 bg-[#e7d17a] absolute top-[29%] right-[29%] z-0"></div>
 
-              <div className="absolute top-[30%] right-[23%] text-white">
+              <div className="absolute top-[30%] right-[22%] text-white">
                 <h1
                   className="text-base text-center my-2"
                   style={{ fontFamily: "oswald-extralight" }}
@@ -204,10 +204,10 @@ const Home = () => {
                 </p>
               </div>
 
-              <div className="w-4 h-4 bg-[#fdf92d] absolute bottom-[44%] left-[30%] transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
-              <div className="w-36 h-0.5 bg-[#e7d17a] absolute bottom-[45%] left-[30%] z-20"></div>
+              <div className="w-4 h-4 bg-[#fdf92d] absolute bottom-[44%] left-[29%] transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
+              <div className="w-36 h-0.5 bg-[#e7d17a] absolute bottom-[45%] left-[29%] z-20"></div>
 
-              <div className="absolute bottom-[28%] left-[23%] text-white">
+              <div className="absolute bottom-[28%] left-[22%] text-white">
                 <h1
                   className="text-base text-center my-2"
                   style={{ fontFamily: "oswald-extralight" }}
