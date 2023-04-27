@@ -7,6 +7,7 @@ import { Web3Button } from "@thirdweb-dev/react";
 import { ethers } from "ethers";
 
 import "react-toastify/dist/ReactToastify.css";
+import LaunchCountdown from "@/containers/LaunchCountdown";
 const erc721ABI = require("../ABI/erc721abi.json");
 
 const contractAddress = "0xfB82675cC33C8FcbC2822d958697Cbd808A8F687";
@@ -58,7 +59,12 @@ const Mint = () => {
             &quot;Hex Gen 1 Bags&quot; NFT – start minting your favorites now!
           </p>
         </div>
-
+        <div className="mt-4">
+          <p className="text-center text-2xl font-semibold mb-4 tracking-wider">
+            Mint will be available in:
+          </p>
+          <LaunchCountdown days={7} hours={12} minutes={5} seconds={0} />
+        </div>
         <div className="flex justify-center my-12">
           <div className="card w-80 glass text-white">
             <figure>
