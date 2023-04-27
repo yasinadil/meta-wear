@@ -51,7 +51,7 @@ export default function RootLayout({
         {/* <WagmiConfig client={wagmiClient}>
           <RainbowKitProvider chains={chains}> */}
         <ThirdwebProvider
-          autoConnect={false}
+          autoConnect={true}
           activeChain="ethereum"
           sdkOptions={{
             alchemyApiKey: process.env.NEXT_PUBLIC_API_KEY!, // your Alchemy API key
