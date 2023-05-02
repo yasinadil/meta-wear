@@ -1,5 +1,7 @@
+"use client";
 import Navbar from "@/components/Navbar/Navbar";
-
+import { ThirdwebProvider } from "@thirdweb-dev/react";
+import "../globals.css";
 export const metadata = {
   title: "NFT COLLECTIONS | Stealth Meta Wear",
   description:
@@ -12,11 +14,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-[#121414]">
+    <div className="bg-[#121414]">
+      <ThirdwebProvider
+        autoConnect={true}
+        activeChain="ethereum"
+        sdkOptions={{
+          alchemyApiKey: process.env.NEXT_PUBLIC_API_KEY!, // your Alchemy API key
+        }}
+      >
         <Navbar />
         {children}
-      </body>
-    </html>
+      </ThirdwebProvider>
+    </div>
   );
 }

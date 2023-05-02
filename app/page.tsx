@@ -27,9 +27,9 @@ const Home = () => {
         />
         <div className="divider bg-yellow-200 h-2 m-0"></div>
         <div className="divider bg-yellow-200 h-0.5 mt-2 mb-0.5"></div>
-        <div className="flex justify-center" id="about">
+        <div className="flex justify-center bg-[#121414]" id="about">
           <div className="w-10/12 md:w-3/4">
-            <h1 className="text-center text-yellow-200">ABOUT</h1>
+            <h1 className="text-center text-yellow-200 ">ABOUT</h1>
             <div className="flex justify-center gap-x-4 mt-4">
               <Link
                 href="https://www.tiktok.com/@stealthmetawear?lang=en"
