@@ -114,7 +114,7 @@ const Mint = () => {
             />{" "}
           </div>
         )} */}
-        {days >= 0 || hours >= 0 || minutes >= 0 || seconds >= 0 ? (
+        {daysFn() >= 0 || hoursFn() >= 0 || minsFn() >= 0 || secFn() >= 0 ? (
           <div className="mt-4">
             <p className="text-center text-2xl text-white font-semibold mb-4 tracking-wider">
               Mint will be available in:
