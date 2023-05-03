@@ -22,6 +22,7 @@ const Mint = () => {
   React.useEffect(() => {
     const unixTimestamp = Math.floor(Date.now());
     const dest = 1683212400000;
+    // const dest = 1683128018000;
     const timestamp = (dest - unixTimestamp) / 1000;
     const days = Math.floor(timestamp / 86400);
     const hours = Math.floor((timestamp % 86400) / 3600);
@@ -86,7 +87,7 @@ const Mint = () => {
           </p>
         </div>
 
-        {days !== 0 && hours !== 0 && minutes !== 0 && seconds !== 0 && (
+        {/* {days !== 0 && hours !== 0 && minutes !== 0 && seconds !== 0 && (
           <div className="mt-4">
             <p className="text-center text-2xl text-white font-semibold mb-4 tracking-wider">
               Mint will be available in:
@@ -98,6 +99,23 @@ const Mint = () => {
               seconds={seconds}
             />{" "}
           </div>
+        )} */}
+        {days >= 0 || hours >= 0 || minutes >= 0 || seconds >= 0 ? (
+          <div className="mt-4">
+            <p className="text-center text-2xl text-white font-semibold mb-4 tracking-wider">
+              Mint will be available in:
+            </p>
+            <LaunchCountdown
+              days={days}
+              hours={hours}
+              minutes={minutes}
+              seconds={seconds}
+            />{" "}
+          </div>
+        ) : (
+          <p className="text-center text-2xl text-white font-semibold mb-4 tracking-wider">
+            &apos;Hex Gen 1 Bags&apos; NFT collection is now ready for mint!
+          </p>
         )}
 
         <div className="flex justify-center my-12">
