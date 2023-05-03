@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 // import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Carousel from "./Carousel";
 import { ToastContainer, toast } from "react-toastify";
@@ -14,47 +14,61 @@ const contractAddress = "0xfB82675cC33C8FcbC2822d958697Cbd808A8F687";
 
 const Mint = () => {
   const [minted, setMinted] = React.useState("0");
-  const [days, setdays] = React.useState(0);
-  const [hours, sethours] = React.useState(0);
-  const [minutes, setminutes] = React.useState(0);
-  const [seconds, setseconds] = React.useState(0);
+  const [days, setdays] = React.useState(daysFn());
+  const [hours, sethours] = React.useState(hoursFn());
+  const [minutes, setminutes] = React.useState(minsFn());
+  const [seconds, setseconds] = React.useState(secFn());
 
-  React.useEffect(() => {
+  function daysFn() {
     const unixTimestamp = Math.floor(Date.now());
     const dest = 1683212400000;
     // const dest = 1683128018000;
     const timestamp = (dest - unixTimestamp) / 1000;
     const days = Math.floor(timestamp / 86400);
+    return days;
+  }
+
+  function hoursFn() {
+    const unixTimestamp = Math.floor(Date.now());
+    const dest = 1683212400000;
+    // const dest = 1683128018000;
+    const timestamp = (dest - unixTimestamp) / 1000;
     const hours = Math.floor((timestamp % 86400) / 3600);
+    return hours;
+  }
+
+  function minsFn() {
+    const unixTimestamp = Math.floor(Date.now());
+    const dest = 1683212400000;
+    // const dest = 1683128018000;
+    const timestamp = (dest - unixTimestamp) / 1000;
     const minutes = Math.floor((timestamp % 3600) / 60);
+    return minutes;
+  }
+
+  function secFn() {
+    const unixTimestamp = Math.floor(Date.now());
+    const dest = 1683212400000;
+    // const dest = 1683128018000;
+    const timestamp = (dest - unixTimestamp) / 1000;
     const seconds = Math.floor(timestamp % 60);
-    setdays(days);
-    sethours(hours);
-    setminutes(minutes);
-    setseconds(seconds);
-    console.log(
-      days +
-        " days " +
-        hours +
-        " hours " +
-        minutes +
-        " minutes " +
-        seconds +
-        " seconds "
-    );
+    return seconds;
+  }
 
-    async function fetchData() {
-      const provider = new ethers.providers.JsonRpcProvider(
-        process.env.NEXT_PUBLIC_ALCHEMY_LINK!
-      );
-      let contract = new ethers.Contract(contractAddress, erc721ABI, provider);
-
-      let Minted = await contract.totalSupply();
-      let total = Number(Minted);
-      setMinted(total.toString());
-    }
+  useEffect(() => {
     fetchData();
   }, []);
+
+  async function fetchData() {
+    const provider = new ethers.providers.JsonRpcProvider(
+      process.env.NEXT_PUBLIC_ALCHEMY_LINK!
+    );
+    let contract = new ethers.Contract(contractAddress, erc721ABI, provider);
+
+    let Minted = await contract.totalSupply();
+    let total = Number(Minted);
+    setMinted(total.toString());
+  }
 
   return (
     <>
