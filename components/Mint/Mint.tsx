@@ -7,53 +7,18 @@ import { Web3Button } from "@thirdweb-dev/react";
 import { ethers } from "ethers";
 
 import "react-toastify/dist/ReactToastify.css";
-import LaunchCountdown from "@/containers/LaunchCountdown";
+import dynamic from "next/dynamic";
+// import LaunchCountdown from "@/containers/LaunchCountdown";
 const erc721ABI = require("../ABI/erc721abi.json");
 
 const contractAddress = "0xfB82675cC33C8FcbC2822d958697Cbd808A8F687";
 
+const LaunchCountdown = dynamic(() => import("@/containers/LaunchCountdown"), {
+  ssr: false,
+});
+
 const Mint = () => {
   const [minted, setMinted] = React.useState("0");
-  const [days, setdays] = React.useState(daysFn());
-  const [hours, sethours] = React.useState(hoursFn());
-  const [minutes, setminutes] = React.useState(minsFn());
-  const [seconds, setseconds] = React.useState(secFn());
-
-  function daysFn() {
-    const unixTimestamp = Math.floor(Date.now());
-    const dest = 1683212400000;
-    // const dest = 1683128018000;
-    const timestamp = (dest - unixTimestamp) / 1000;
-    const days = Math.floor(timestamp / 86400);
-    return days;
-  }
-
-  function hoursFn() {
-    const unixTimestamp = Math.floor(Date.now());
-    const dest = 1683212400000;
-    // const dest = 1683128018000;
-    const timestamp = (dest - unixTimestamp) / 1000;
-    const hours = Math.floor((timestamp % 86400) / 3600);
-    return hours;
-  }
-
-  function minsFn() {
-    const unixTimestamp = Math.floor(Date.now());
-    const dest = 1683212400000;
-    // const dest = 1683128018000;
-    const timestamp = (dest - unixTimestamp) / 1000;
-    const minutes = Math.floor((timestamp % 3600) / 60);
-    return minutes;
-  }
-
-  function secFn() {
-    const unixTimestamp = Math.floor(Date.now());
-    const dest = 1683212400000;
-    // const dest = 1683128018000;
-    const timestamp = (dest - unixTimestamp) / 1000;
-    const seconds = Math.floor(timestamp % 60);
-    return seconds;
-  }
 
   useEffect(() => {
     fetchData();
@@ -100,38 +65,7 @@ const Mint = () => {
             &quot;Hex Gen 1 Bags&quot; NFT – start minting your favorites now!
           </p>
         </div>
-
-        {/* {days !== 0 && hours !== 0 && minutes !== 0 && seconds !== 0 && (
-          <div className="mt-4">
-            <p className="text-center text-2xl text-white font-semibold mb-4 tracking-wider">
-              Mint will be available in:
-            </p>
-            <LaunchCountdown
-              days={days}
-              hours={hours}
-              minutes={minutes}
-              seconds={seconds}
-            />{" "}
-          </div>
-        )} */}
-        {daysFn() >= 0 || hoursFn() >= 0 || minsFn() >= 0 || secFn() >= 0 ? (
-          <div className="mt-4">
-            <p className="text-center text-2xl text-white font-semibold mb-4 tracking-wider">
-              Mint will be available in:
-            </p>
-            <LaunchCountdown
-              days={days}
-              hours={hours}
-              minutes={minutes}
-              seconds={seconds}
-            />{" "}
-          </div>
-        ) : (
-          <p className="text-center text-2xl text-white font-semibold mb-4 tracking-wider">
-            &apos;Hex Gen 1 Bags&apos; NFT collection is now ready for mint!
-          </p>
-        )}
-
+        <LaunchCountdown />{" "}
         <div className="flex justify-center my-12">
           <div className="card w-80 glass text-white">
             <figure>

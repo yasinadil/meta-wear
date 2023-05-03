@@ -10,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#121414]">
+      <body className="bg-[#121414]" suppressHydrationWarning={true}>
         <ThirdwebProvider
           autoConnect={true}
           activeChain="ethereum"

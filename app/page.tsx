@@ -9,14 +9,20 @@ import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
 import Mint from "@/components/Mint/Mint";
 import Head from "next/head";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Digital Identity | Stealth Meta Wear",
+  icons: {
+    icon: "./favicon.ico",
+    shortcut: "./favicon.ico",
+    apple: "./favicon.ico",
+  },
+};
 
 const Home = () => {
   return (
     <>
-      <Head>
-        <title>Digital Identity | Stealth Meta Wear</title>
-        <link rel="icon" href="../public/favicon.ico" />
-      </Head>
       <Script src="https://kit.fontawesome.com/aa92af4b25.js" />
       <main>
         {/* <div className="bg-[url('../public/assets/SMW-Logo_Glitch.gif')] bg-cover bg-no-repeat w-[100%] h-[100vh]"></div> */}
