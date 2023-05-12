@@ -8,7 +8,6 @@ import nobg from "../public/assets/SMW-NoBG.gif";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
 import Mint from "@/components/Mint/Mint";
-import Head from "next/head";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

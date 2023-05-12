@@ -21,6 +21,8 @@ const Mint = () => {
   const [minted, setMinted] = React.useState("0");
 
   useEffect(() => {
+    console.log("hello from staking");
+
     fetchData();
   }, []);
 
