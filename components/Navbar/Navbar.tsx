@@ -85,7 +85,7 @@ const Navbar = () => {
                 </li>
 
                 <li className="border border-y-black border-x-0">
-                  <div className="flex justify-center my-2">
+                  <div className="flex justify-center">
                     {" "}
                     <Link
                       className="text-black font-semibold text-xl"
@@ -106,6 +106,18 @@ const Navbar = () => {
                       onClick={() => isClicked(false)}
                     >
                       Development
+                    </Link>
+                  </div>
+                </li>
+                <li className="border border-y-black border-x-0">
+                  <div className="flex justify-center">
+                    {" "}
+                    <Link
+                      className="text-black font-semibold text-xl"
+                      href={"/stake"}
+                      onClick={() => isClicked(false)}
+                    >
+                      Stake
                     </Link>
                   </div>
                 </li>
