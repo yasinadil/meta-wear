@@ -11,7 +11,7 @@ import dynamic from "next/dynamic";
 // import LaunchCountdown from "@/containers/LaunchCountdown";
 const erc721ABI = require("../ABI/erc721abi.json");
 
-const contractAddress = "0xfB82675cC33C8FcbC2822d958697Cbd808A8F687";
+const contractAddress = "0x19C316f29Dc7e448a83b189e47f1365BF5DfA701";
 
 const LaunchCountdown = dynamic(() => import("@/containers/LaunchCountdown"), {
   ssr: false,
@@ -21,8 +21,6 @@ const Mint = () => {
   const [minted, setMinted] = React.useState("0");
 
   useEffect(() => {
-    console.log("hello from staking");
-
     fetchData();
   }, []);
 
@@ -90,7 +88,6 @@ const Mint = () => {
                   Mint Now!
                 </button> */}
                 <Web3Button
-                  className="bg-[#e7d17a] text-black py-2 hover:bg-red-600"
                   contractAddress={contractAddress}
                   contractAbi={erc721ABI}
                   theme="dark"
@@ -133,7 +130,9 @@ const Mint = () => {
                     })
                   }
                 >
-                  Mint Now!
+                  <span className="bg-[#e7d17a] text-black py-2 hover:bg-red-600 px-4">
+                    Mint Now!
+                  </span>
                 </Web3Button>
               </div>
             </div>

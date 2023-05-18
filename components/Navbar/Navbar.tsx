@@ -124,33 +124,36 @@ const Navbar = () => {
           </Link>
           <div className="flex flex-row justify-center">
             <div className="flex justify-around items-start gap-x-14 text-lg absolute top-5 left-[50%] translate-x-[-50%] ">
-              <div className="flex flex-row items-center">
-                <div className="flex items-center h-14 w-52 justify-end">
-                  <a
-                    className="text-right"
-                    href={"/#about"}
-                    style={{ scrollBehavior: "smooth" }}
-                  >
-                    ABOUT
-                  </a>
-                </div>
-                <div className="flex items-center h-14 w-52 justify-end">
-                  <Link className="text-right mr-10" href={"/development"}>
-                    DEVELOPMENT
-                  </Link>
-                </div>
-                <div className="flex items-center h-14 w-52 justify-end">
-                  <Link className="text-center ml-10" href={"/nft-collections"}>
-                    NFT COLLECTIONS
-                  </Link>
-                </div>
-                <div className="flex justify-center items-center w-52 h-14">
+              <div className="flex flex-row gap-x-4 items-center">
+                <a
+                  className="flex items-center h-14 w-52 justify-center rounded-[12px] navBorders hover:bg-[#1C1C1F] text-right"
+                  href={"/#about"}
+                  style={{ scrollBehavior: "smooth" }}
+                >
+                  ABOUT
+                </a>
+
+                <div className="flex justify-center items-center w-52 h-14 mr-14">
                   <ConnectWallet
                     btnTitle="CONNECT WALLET"
                     theme="dark"
-                    className="bg-transparent w-64 text-center"
+                    className="rounded-[12px] navBorders hover:bg-[#1C1C1F] w-64 text-center"
                   />
                 </div>
+
+                <Link
+                  className="flex items-center h-14 w-52 justify-center rounded-[12px] navBorders hover:bg-[#1C1C1F] text-center"
+                  href={"/stake"}
+                >
+                  STAKE
+                </Link>
+
+                <Link
+                  className="flex items-center h-14 w-52 justify-center rounded-[12px] navBorders hover:bg-[#1C1C1F] text-right"
+                  href={"/development"}
+                >
+                  DEVELOPMENT
+                </Link>
               </div>
             </div>
           </div>

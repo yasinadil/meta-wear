@@ -13,7 +13,7 @@ export default function RootLayout({
       <body className="bg-[#121414]" suppressHydrationWarning={true}>
         <ThirdwebProvider
           autoConnect={true}
-          activeChain="ethereum"
+          activeChain="mumbai"
           sdkOptions={{
             alchemyApiKey: process.env.NEXT_PUBLIC_API_KEY!, // your Alchemy API key
           }}
